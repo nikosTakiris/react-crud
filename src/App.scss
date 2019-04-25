@@ -1,0 +1,208 @@
+$colors: (
+just-white: #fff,
+secondary-color: rgb(30, 34, 39),
+dark-grey: #909090,
+header-bg: #415368,
+btn-blue: #0082fc,
+btn-hover-blue: #046bcc,
+cancel-btn: #828b93,
+cancel-btn-hover: #6b737a,
+light-black: #606060,
+light-gri: #f9f9f9,
+category:#c0c0c0
+);
+
+$sizes : (
+full: 100%,
+half: 50%
+);
+
+@function vars($var-category, $var-name) {
+  @return map-get($var-category, $var-name);
+}
+$bold: 600;
+$font: 'Mallanna', sans-serif;
+$point: pointer;
+
+
+$tablet: 800px;
+$mobile: 320px;
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+button {
+  border: none;
+  cursor: $point;
+}
+
+body {
+  width: vars($sizes, full);
+  color: vars($colors, secondary);
+  text-align: center;
+  font-family: $font;
+}
+
+.header {
+  width: vars($sizes, full);
+  margin:0 auto;
+  padding: 20px 0;
+  border-bottom: 0.1rem solid #e0e0e0;
+
+  h3 {
+    font-weight: 600;
+    color: vars($colors, dark-grey);
+    font-size: $font;
+    letter-spacing: 0.05rem;
+    text-transform:uppercase;
+
+    @include mobile {
+      font-size: 0.9rem;
+    }
+  }
+
+    .header_p {
+      font-size: 0.99rem;
+      color: #00ffc7;
+      color:#0c9;
+      font-weight: $bold;
+      @include mobile {
+        font-size: 0.83rem;
+      }
+    }
+}
+
+.movieBoard {
+  width:vars($sizes, half);
+  margin: 0px auto;
+  @include tablet {
+    width: 80%;
+  }
+}
+
+.no-movies {
+  p {
+    font-size: 1rem;
+    color: vars($colors, light-black);
+    padding: 20px 0;
+    font-weight: $bold;
+
+    @include mobile {
+      font-size: 0.9rem;
+    }
+  }
+}
+.movieList_p {
+  color: vars($colors, light-black);
+  padding: 15px 0;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 1.1rem;
+  font-weight: $bold;
+
+  @include mobile {
+    font-size: 0.9rem;
+  }
+}
+.movieForm {
+  form {
+    margin-bottom: 30px;
+  }
+  .mising-rate {
+    margin-bottom: 15px;
+  }
+}
+textarea {
+  resize: none;
+  color:red;
+  font-size: 1.2rem;
+  color: vars($colors, light-black);
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #e1e1e1;
+}
+textarea, select {
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+}
+
+select {
+  border-color: #f0f0f0;
+  background: #f9f9f9;
+  font-weight: $bold;
+  color: vars($colors, light-black);
+  font-size: 0.9rem;
+}
+option {
+  font-size: 0.95rem;
+}
+.editDelete img {
+  cursor: $point;
+  opacity: 0.6;
+}
+.editDelete img:hover {
+  opacity: 1;
+}
+.movie {
+  border-bottom:1px solid #e1e1e1;
+  margin: 20px 0;
+  padding-bottom: 20px;
+
+  .title {
+    font-weight: $bold;
+    font-size: 1.1rem;
+    color:vars($colors, light-black);
+  }
+  .category {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: vars($colors, category);
+  }
+}
+.movie img {
+  width: 1.2rem;
+  height:1.2rem;
+}
+.createMovie button {
+  margin:20px 0;
+}
+.createMovie button, .create-upd-btn, .cancel-btn {
+    background: vars($colors, btn-blue);
+    color: vars($colors, just-white);
+    font-weight: $bold;
+    padding: 10px;
+    font-size: 0.86rem;
+
+    @include mobile {
+      font-size: 0.8rem;
+    }
+  }
+  button:hover {
+    background: vars($colors, btn-hover-blue);
+  }
+.cancel-btn {
+  background:vars($colors, cancel-btn);
+  margin-left: 0.5rem;
+
+
+}
+.cancel-btn:hover {
+  background: vars($colors, cancel-btn-hover);
+}
