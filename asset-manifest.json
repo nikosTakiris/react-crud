@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/react-crud/static/css/main.d30311ae.chunk.css",
+    "main.js": "/react-crud/static/js/main.d4d99dc2.chunk.js",
+    "main.js.map": "/react-crud/static/js/main.d4d99dc2.chunk.js.map",
+    "runtime~main.js": "/react-crud/static/js/runtime~main.73d447a4.js",
+    "runtime~main.js.map": "/react-crud/static/js/runtime~main.73d447a4.js.map",
+    "static/js/2.771d70bf.chunk.js": "/react-crud/static/js/2.771d70bf.chunk.js",
+    "static/js/2.771d70bf.chunk.js.map": "/react-crud/static/js/2.771d70bf.chunk.js.map",
+    "index.html": "/react-crud/index.html",
+    "precache-manifest.103df901ffb3e35dba375d0a6dcc605b.js": "/react-crud/precache-manifest.103df901ffb3e35dba375d0a6dcc605b.js",
+    "service-worker.js": "/react-crud/service-worker.js",
+    "static/css/main.d30311ae.chunk.css.map": "/react-crud/static/css/main.d30311ae.chunk.css.map",
+    "static/media/delete.jpg": "/react-crud/static/media/delete.a6a5e805.jpg",
+    "static/media/edit.png": "/react-crud/static/media/edit.9757d6bb.png"
+  }
+}
