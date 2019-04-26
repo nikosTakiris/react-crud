@@ -53,6 +53,7 @@ class MovieEdit extends Component {
         title={this.props.title}
         category={this.props.category}
         rate={this.props.rate}
+        movies={this.props.movies}
         submitForm={this.handleSubmit.bind(this)} cancelForm={this.closeEdit.bind(this)}
          />
       );

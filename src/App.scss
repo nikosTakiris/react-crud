@@ -57,7 +57,6 @@ body {
   color: vars($colors, secondary);
   text-align: center;
   font-family: $font;
-  border: 1px solid red;
 }
 
 .header {
@@ -146,6 +145,8 @@ textarea, select {
 
 select {
   border-color: #f0f0f0;
+  border:none;
+  outline:none;
   background: #f9f9f9;
   font-weight: $bold;
   color: vars($colors, light-black);
@@ -153,6 +154,9 @@ select {
 }
 option {
   font-size: 0.95rem;
+  outline:none;
+  border:none;
+  background: #fff;
 }
 .editDelete img {
   cursor: $point;
@@ -206,4 +210,8 @@ option {
 }
 .cancel-btn:hover {
   background: vars($colors, cancel-btn-hover);
+}
+.title-exists {
+  color:red;
+  font-size: 18px;
 }

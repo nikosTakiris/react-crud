@@ -24,11 +24,38 @@ submitForm(e) {
   let category;
   let rate;
   let statusSame = false;
+
+
+
   if(this.props.id) {
+    let newState = Object.assign({}, this.state);
+    let title_state = JSON.stringify(newState.title.trim());
+
      id = this.props.id;
      title = (this.state.title === "") ? this.props.title : this.state.title;
      category = (this.state.category === "") ? this.props.category : this.state.category;
      rate = (this.state.rate === "") ? this.props.rate : this.state.rate;
+
+    console.log(title_state.toLowerCase()); // the state title
+
+     this.props.movies.some( (movie, i) => {
+       let newMovie = Object.assign({}, movie);
+
+       let movie_title = JSON.stringify(newMovie.title.trim());
+
+        if( title_state.toLowerCase() === movie_title.toLowerCase() ) {
+
+     this.setState({
+           titleSameOff: true
+         });
+         statusSame = true;
+        console.log(title_state);
+
+       }
+     });
+     if(statusSame) {
+       return;
+     }
    } else {
 
      id = uuid.v4();
@@ -39,7 +66,7 @@ submitForm(e) {
      let newState = Object.assign({}, this.state);
      let title_state = JSON.stringify(newState.title.trim());
 
-     this.props.movies.map(movie => {
+     this.props.movies.map( (movie, i) => {
        let newMovie = Object.assign({}, movie);
        let movie_title = JSON.stringify(newMovie.title.trim());
 
@@ -114,6 +141,7 @@ newRate() {
 
   render() {
 
+
     const title = (this.props.id) ? this.props.title : "";
     const category = (this.props.id) ? `Choose category. Your current choise is ${this.props.category}` : "Choose category";
     const rate = (this.props.id) ? `Choose rate. Your current rate is  ${this.props.rate}` : "Choose rate";
@@ -128,9 +156,9 @@ newRate() {
 
       <form>
 
-      <textarea ref="title" placeholder={(this.props.id) ? "" : titlePlaceholder} onChange={this.newTitle.bind(this)}>{(this.props.id) ? titleValue : ""}</textarea>
+      <textarea ref="title" onChange={this.newTitle.bind(this)}>{(this.props.id) ? titleValue : ""}</textarea>
       {(this.state.titleOff) ? <span>Title is missing</span> : ""}
-      {(this.state.titleSameOff) ? <span>This movie already exists</span> : ""}
+      {(this.state.titleSameOff) ? <span className="title-exists">This movie already exists</span> : ""}
       <select ref="category" onClick={this.newCategory.bind(this)}>
       <option value="">{category}</option>
       <option value="Adventure">Adventure</option>

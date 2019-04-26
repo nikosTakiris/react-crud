@@ -4,10 +4,8 @@ import '../App.scss';
 import uuid from 'uuid';
 
 class MovieList extends Component {
+
   render() {
-
-
-
 
   if(!this.props.statusList) {
     return (
@@ -16,6 +14,7 @@ class MovieList extends Component {
       </div>
     );
   } else {
+    console.log(this.props.movies);
     const movie = this.props.movies.map(movie => {
 
       return (
@@ -25,6 +24,7 @@ class MovieList extends Component {
         title={movie.title}
         category={movie.category}
         rate={movie.rate}
+        movies={this.props.movies}
         handleEdit={this.props.editSubmit}
         onDelete={this.props.onDelete}
          />

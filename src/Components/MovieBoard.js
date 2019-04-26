@@ -78,7 +78,7 @@ handleDelete(id) {
 
     return (
       <div className="movieBoard">
-      
+
       <MovieList key={uuid.v4()} movies={this.state.movies} statusList={this.state.statusList} editSubmit={this.editMovie.bind(this)} onDelete={this.handleDelete.bind(this)} />
       <ToggleButtonForm handleCreate={this.createMovie.bind(this)} movies={this.state.movies} />
     </div>
