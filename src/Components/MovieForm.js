@@ -156,7 +156,7 @@ newRate() {
 
       <form>
 
-      <textarea ref="title" onChange={this.newTitle.bind(this)}>{(this.props.id) ? titleValue : ""}</textarea>
+      <textarea placeholder="Movie title" ref="title" onChange={this.newTitle.bind(this)}>{(this.props.id) ? titleValue : ""}</textarea>
       {(this.state.titleOff) ? <span>Title is missing</span> : ""}
       {(this.state.titleSameOff) ? <span className="title-exists">This movie already exists</span> : ""}
       <select ref="category" onClick={this.newCategory.bind(this)}>
